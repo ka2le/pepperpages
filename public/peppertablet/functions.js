@@ -8,6 +8,16 @@ function onload(){
 	console.log(urlSplit);
 	if(urlSplit.length>1){
 		var page = urlSplit[1];
+		var data = "";
+		if(urlSplit.length>2){
+			data = urlSplit[2];
+			var dataType = data.split("=")[0];
+			var dataValue = data.split("=")[1];
+			if(dataType == "score"){
+				document.getElementById("score").innerHTML = dataValue;
+			}
+		}
+		
 		var id = page;
 		$('.link').removeClass("activeLink");
 		//$(this).addClass("activeLink");
