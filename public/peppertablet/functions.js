@@ -16,6 +16,9 @@ function onload(){
 			if(dataType == "score"){
 				document.getElementById("score").innerHTML = dataValue;
 			}
+			if(dataType == "youtube"){
+				document.getElementById("youtube").innerHTML = ' <iframe class="youtube" src="'+dataValue+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+			}
 		}
 		
 		var id = page;
