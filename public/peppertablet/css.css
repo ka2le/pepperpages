@@ -2,7 +2,7 @@ body{
  padding:0px;
  margin:0px;
  overflow:hidden;
- font-size:1.7em;
+ font-size:2.7em;
  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 }
@@ -57,7 +57,7 @@ a, div.text_content { display: inline; padding: 0 10px; }
 	 padding:0px;
 	margin:0px;
 	width:100vw; 
-	height:80vh; 
+	height:85vh; 
 	overflow:hidden;
 	background-color:rgb(240,240,255);
 	top: 20vh;
@@ -86,9 +86,9 @@ li{
 #content{
 	position: absolute;
 	left: 20vw;
-	height:80vh;
+	height:85vh;
 
-	width:80vw;
+	width:85vw;
 	padding-left: 15px;
 	padding-top: 15px;
 	background-color:rgb(240,242,244);
