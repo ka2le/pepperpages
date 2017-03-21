@@ -54,7 +54,7 @@ function getTitleAndText(inputText){
 function htmlToCleanText(htmlText){
 	document.getElementById("tempDiv").innerHTML = htmlText;
 	var cleanText = removeBrackets($("#tempDiv").text()).replace(/(\r\n|\n|\r)/gm,"");
-	cleanText = cleanText.replace(/,/gi,"");
+	cleanText = cleanText.replace(/,/gi," COMMARHERE ");
 	cleanText = cleanText.replace(/#/gi,"");
 		cleanText = cleanText.replace(/"/gi,"");
 			cleanText = cleanText.replace(/'/gi,"");
@@ -103,23 +103,29 @@ function createTopic(){
 		var titel = contentArray[i][0];
 		if(sentences.length>2){
 			//rubriker här
-			dialogtxt += "\n\tu1:("+titel+") Wikipedia says "+sentences[0]+"";
+			dialogtxt += "\n\tu1:("+titel+") Wikipedia says "+sentences[0].replace(/COMMARHERE/g," . ")+"";
 			//tre första meningarna
 			for(var j = 1; j<sentences.length && j<3; j++){
-				dialogtxt += sentences[j]+" ";
+				var thisScentence = sentences[j];
+				thisScentence = thisScentence.replace(/COMMARHERE/g," . ");
+				dialogtxt += " . "+thisScentence+" . ";
 			}
 			
-			dialogtxt +=" Do you want to me to keep reading about this topic";
+			dialogtxt +='  ^first[" $pauseOn==true $pause=1  A. A. A. "  " . "]  Do you want to hear more about this topic? ';
 			dialogtxt += "\n\t\tu2:(~yes) ";
 			for(var j = 3; j<sentences.length; j++){
-				dialogtxt += sentences[j]+" ";
+				var thisScentence = sentences[j];
+				thisScentence = thisScentence.replace(/COMMARHERE/g," . ");
+				dialogtxt += " . "+thisScentence+" . ";
 			}
 			dialogtxt += "\n\t\tu2:(~no) ok  ^goto(storyMode) \n";
 		}else{
-			dialogtxt += "\n\tu1:("+titel+") Wikipedia says "+sentences[0]+"";
+			dialogtxt += "\n\tu1:("+titel+") Wikipedia says "+sentences[0].replace(/COMMARHERE/g," . ")+"";
 			//tre första meningarna
 			for(var j = 1; j<sentences.length && j<3; j++){
-				dialogtxt += sentences[j]+" ";
+				var thisScentence = sentences[j];
+				thisScentence = thisScentence.replace(/COMMARHERE/g," . ");
+				dialogtxt += " . "+thisScentence+" . ";
 			}
 		}	
 	}
