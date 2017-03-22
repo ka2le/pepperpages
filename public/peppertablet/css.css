@@ -57,7 +57,7 @@ a, div.text_content { display: inline; padding: 0 10px; }
 	 padding:0px;
 	margin:0px;
 	width:100vw; 
-	height:85vh; 
+	height:80vh; 
 	overflow:hidden;
 	background-color:rgb(240,240,255);
 	top: 20vh;
@@ -86,7 +86,7 @@ li{
 #content{
 	position: absolute;
 	left: 30vw;
-	height:85vh;
+	height:100vh;
 
 	width:85vw;
 	padding-left: 30px;
