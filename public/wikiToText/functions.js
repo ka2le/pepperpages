@@ -55,6 +55,7 @@ function htmlToCleanText(htmlText){
 	document.getElementById("tempDiv").innerHTML = htmlText;
 	var cleanText = removeBrackets($("#tempDiv").text()).replace(/(\r\n|\n|\r)/gm,"");
 	cleanText = cleanText.replace(/,/gi," COMMARHERE ");
+	cleanText = cleanText.replace(/NSYNC/gi," N sync ");
 	cleanText = cleanText.replace(/#/gi,"");
 		cleanText = cleanText.replace(/"/gi,"");
 			cleanText = cleanText.replace(/'/gi,"");
@@ -108,7 +109,7 @@ function createTopic(){
 			for(var j = 1; j<sentences.length && j<3; j++){
 				var thisScentence = sentences[j];
 				thisScentence = thisScentence.replace(/COMMARHERE/g," . ");
-				dialogtxt += " . "+thisScentence+" . ";
+				dialogtxt += thisScentence+" . ";
 			}
 			
 			dialogtxt +='  ^first[" $pauseOn==true $pause=1  A. A. A. "  " . "]  Do you want to hear more about this topic? ';
@@ -116,7 +117,7 @@ function createTopic(){
 			for(var j = 3; j<sentences.length; j++){
 				var thisScentence = sentences[j];
 				thisScentence = thisScentence.replace(/COMMARHERE/g," . ");
-				dialogtxt += " . "+thisScentence+" . ";
+				dialogtxt += thisScentence+" . ";
 			}
 			dialogtxt += "\n\t\tu2:(~no) ok  ^goto(storyMode) \n";
 		}else{
@@ -125,7 +126,7 @@ function createTopic(){
 			for(var j = 1; j<sentences.length && j<3; j++){
 				var thisScentence = sentences[j];
 				thisScentence = thisScentence.replace(/COMMARHERE/g," . ");
-				dialogtxt += " . "+thisScentence+" . ";
+				dialogtxt += thisScentence+" . ";
 			}
 		}	
 	}

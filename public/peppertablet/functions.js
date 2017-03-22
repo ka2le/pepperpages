@@ -6,7 +6,7 @@ function onload(){
 	var url = window.location.href;
 	var urlSplit = url.split("#");
 	console.log(urlSplit);
-	console.log("newverison");
+	console.log("newverison1");
 	if(urlSplit.length>1){
 		var page = urlSplit[1];
 		var data = "";
