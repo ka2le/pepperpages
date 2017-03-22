@@ -6,6 +6,7 @@ function onload(){
 	var url = window.location.href;
 	var urlSplit = url.split("#");
 	console.log(urlSplit);
+	console.log("newverison");
 	if(urlSplit.length>1){
 		var page = urlSplit[1];
 		var data = "";
@@ -13,11 +14,11 @@ function onload(){
 			data = urlSplit[2];
 			var dataType = data.split("=")[0];
 			var dataValue = data.split("=")[1];
+			console.log(data);
 			if(dataType == "score"){
 				document.getElementById("score").innerHTML = dataValue;
-			}
-			if(dataType == "youtube"){
-				document.getElementById("youtube").innerHTML = ' <iframe class="youtube" src="'+dataValue+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+			}else{
+				document.getElementById("youtube").innerHTML = ' <iframe class="youtube" src="'+data+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
 			}
 		}
 		
