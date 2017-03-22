@@ -57,6 +57,9 @@ function htmlToCleanText(htmlText){
 	cleanText = cleanText.replace(/,/gi," COMMARHERE ");
 	cleanText = cleanText.replace(/NSYNC/gi," N sync ");
 	cleanText = cleanText.replace(/#/gi,"");
+	cleanText = cleanText.replace(/;/gi,"");
+	cleanText = cleanText.replace(/$/gi,"");
+	cleanText = cleanText.replace(/\//gi,"");
 		cleanText = cleanText.replace(/"/gi,"");
 			cleanText = cleanText.replace(/'/gi,"");
 		cleanText = cleanText.replace(/:/gi,"");
@@ -98,7 +101,7 @@ function createTopic(){
 	var dialogtxt = "";
 	//dialogtxt = "topic: ~ronaldTalk () \n language: enu";
 	//dialogtxt += "\nconcept:(music) [music artist]";
-	dialogtxt += "\nu:(story) %storyMode Look at my stomach to see the headlines and tell me what you want to hear about?";
+	dialogtxt += "\nu:(storyMode) %storyMode $openPage=story Look at my stomach to see the headlines and tell me what you want to hear about?";
 	for(var i = 0; i<contentArray.length; i++){
 		var sentences = contentArray[i][1];
 		var titel = contentArray[i][0];
