@@ -1,6 +1,9 @@
 
 
-
+function test(){
+	document.elementFromPoint(500, 500).click();
+	
+}
 function onload(){
 	//alert("hej");
 	var url = window.location.href;
@@ -18,7 +21,8 @@ function onload(){
 			if(dataType == "score"){
 				document.getElementById("score").innerHTML = dataValue;
 			}else{
-				document.getElementById("youtube").innerHTML = ' <iframe class="youtube" src="'+data+'?autoplay=1" frameborder="0" allowfullscreen></iframe>';
+				//?autoplay=1
+				document.getElementById("youtube").innerHTML = ' <iframe class="youtube" src="'+data+'" frameborder="0" allowfullscreen></iframe>';
 			}
 		}
 		
